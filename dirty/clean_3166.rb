@@ -1,4 +1,6 @@
 
+require "./config.rb"
+
 #
 # takes copy and pasted (manually) table from wikipedia:
 # http://en.wikipedia.org/wiki/ISO_3166-1
@@ -6,7 +8,7 @@
 # and cleans it into csv.
 #
 
-OUTPUT = "clean/3166.csv"
+OUTPUT = OUTPUT_3166 
 
 USAGE =<<END
   [ruby] #{$0} <input file>

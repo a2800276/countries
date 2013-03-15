@@ -1,16 +1,17 @@
+require "./config.rb"
 
-
+# Downloads and processes Common Locale Data Repository (CLDR)
+# data from unicode.org.
 
 CLDR_VERSION="22.1"
 CLDR_URL="http://unicode.org/Public/cldr/#{CLDR_VERSION}/core.zip"
 CLDR_OUTPUT="./cldr/core.#{CLDR_VERSION}.zip"
-OUTPUT="clean"
 WORK="work"
 
 
 USAGE =<<END
   [ruby] #{$0} 
-    output file: #{OUTPUT}
+    output dir: #{OUTPUT}
 END
 
 
@@ -35,7 +36,6 @@ def unzip_cldr
 end
 
 CLDR_SUPP="#{WORK}/common/supplemental/supplementalData.xml"
-FN_3166_2_4217="#{OUTPUT}/3166_2_4217.csv"
 
 def parse_cldr
   require "rexml/document"
@@ -43,7 +43,7 @@ def parse_cldr
   # start with alpha2 3166 country to currency
   supp = File.new(CLDR_SUPP)
   doc = REXML::Document.new supp
-  CSV.open(FN_3166_2_4217, "w") { |csv|
+  CSV.open(OUTPUT_3166_2_4217, "w") { |csv|
     csv << ["3166 alpha2", "4217 aplha2"]
     doc.elements.each("*/currencyData/region") { |el|
       country  = el.attributes["iso3166"]
@@ -69,7 +69,7 @@ if $0 == __FILE__
   end
 
   download_cldr
-  #unzip_cldr
+  unzip_cldr
   parse_cldr
 end
 

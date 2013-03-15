@@ -1,4 +1,5 @@
 
+require "./config.rb"
 
 #
 # takes currency data from maintenance agency:
@@ -7,7 +8,7 @@
 # and cleans it into csv.
 #
 
-OUTPUT = "clean/4217.csv"
+OUTPUT = OUTPUT_4217
 
 USAGE =<<END
   [ruby] #{$0} <input file>

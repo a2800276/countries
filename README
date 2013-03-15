@@ -1,0 +1,47 @@
+countries
+
+Countries is a collection of data that I find myself needing again and
+again and not knowing of a succint place to find every, all together, in
+one location and in a useable format.
+
+Currently, the collection contains:
+
+* Country names (English)
+* ISO 3166 alpha2, alpha3 and numeric codes
+* Currencies with names and alpha and numeric codes and minor unit
+  exponent
+
+This information is presented in a number of formats:
+
+* csv
+* json
+* sql
+
+more may follow as I require them. I would also like to include
+application code to access this information should be care to contribute
+it.
+
+I will try to update these files as often as necessary and at latest
+when I get yelled at loud enough.
+
+The top level directory contains the processed files, the subdirectory
+contains a number of scripts and hacks to assemble the information.
+
+Future expansion may include:
+
+* flags
+* date, number and currency formats
+* name of languages 
+* name of languages, countries and currencies in different languages
+* phone- and postcode and basic geocoordinate information
+* whatever comes to mind or is offered and makes sense to me.
+
+CONTACT
+
+Tim Becker (tim.becker@kuriositaet.de)
+
+LICENSE
+
+BSD
+
+
