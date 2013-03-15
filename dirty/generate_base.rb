@@ -29,7 +29,7 @@ end
 class Currency
   attr_accessor :alpha3, :numeric4217, :name, :minor
 
-  def minor_sql minor
+  def minor_sql 
     # pseudo currencies such as gold (XAU) have currency exponent marked
     # as N.A. only have room for one CHAR in DB...
     # probably SHOULD make DB field be NUMERIC and leave as NULL if N.A.
@@ -40,7 +40,7 @@ class Currency
     @symbol = ""
   end
   def to_insert prefix
-    "INSERT INTO #{prefix}currencies(alpha3, numeric4217, name, symbol, minor) "+
+    "INSERT INTO #{prefix}currencies(alpha3, numeric4217, name, minor) "+
     "VALUES ('%s', '%s','%s','%s');\n" % [alpha3, numeric4217, name, minor_sql]
   end
   def to_json *a

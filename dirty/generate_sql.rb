@@ -5,20 +5,21 @@ require "./config.rb"
 require "./generate_base.rb"
 
 CREATE =<<END
-
+DROP TABLE XXXcountries;
 CREATE TABLE XXXcountries (
   alpha2      CHAR(2)      PRIMARY KEY,
   alpha3      CHAR(3)      NOT NULL UNIQUE, 
   numeric3166 CHAR(3)      NOT NULL UNIQUE,
   name        VARCHAR(256) NOT NULL UNIQUE, -- hmmm, english?
-  currency    CHAR(2)      FOREIGN KEY REFERENCES XXXcurrencies(alpha2)
+  currency    CHAR(3)      REFERENCES XXXcurrencies(alpha3)
 );
 
+DROP TABLE XXXcurrencies;
 CREATE TABLE XXXcurrencies (
-  alpha3      CHAR(2)      PRIMARY KEY,
+  alpha3      CHAR(3)      PRIMARY KEY,
   numeric4217 CHAR(3)      NOT NULL UNIQUE,
   name        VARCHAR(256) NOT NULL UNIQUE,
-  minor       NUMERIC(1)   NOT NULL,
+  minor       NUMERIC(1)   NOT NULL
   -- minor_name ... tbd
   -- symbol      VARCHAR(10) -- determine
 );
