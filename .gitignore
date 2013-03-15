@@ -1,0 +1,4 @@
+*.swp
+dirty/cldr
+dirty/clean
+dirty/work
