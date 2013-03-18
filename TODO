@@ -2,6 +2,7 @@
 * some concept of versioning
 * application code in various languages for easier integration
 * currency symbols
+* css
 * more automation
 * tests with various DB's (postgres, sqlite) (travis?)
 * more stuff :)

@@ -24,12 +24,38 @@ it.
 I will try to update these files as often as necessary and at latest
 when I get yelled at loud enough.
 
-The top level directory contains the processed files, the subdirectory
-contains a number of scripts and hacks to assemble the information.
+The top level directory contains the processed files, the subdirectory `dirty`
+contains the dirty work, a number of scripts and hacks to assemble the
+information.
+
+Flags
+
+The directory `flags` contains PNG (16X11) flags for convenience. This
+set of flags was retrieved from
+http://www.famfamfam.com/lab/icons/flags/. The orginal set was missing
+flags for the following 3166 entities:
+
+* Antarctica (AQ)
+* Saint Barthélemy (BL)
+* Bonaire (BQ)
+* Curaçao (CW)
+* Guernsey (GG)
+* Isle of Man (IM)
+* Jersey (JE)
+* Saint Martin (French part) (MF) (French flag)
+* South Sudan (SS)
+* Sint Maarten (Dutch part) (SX)
+
+I've added these using flag data from wikipedia. A number of free high
+quality flag icon sets are available on the internet, e.g.:
+
+https://github.com/koppi/iso-country-flags-svg-collection
+
+in case you require other formats or resolution. The flag icons here are
+png formatted 16x11 pixels in size.
 
 Future expansion may include:
 
-* flags
 * date, number and currency formats
 * name of languages 
 * name of languages, countries and currencies in different languages
@@ -42,6 +68,8 @@ Tim Becker (tim.becker@kuriositaet.de)
 
 LICENSE
 
-BSD
+I've added an MIT license to cover this specific collection and
+representation. To the best of my knowledge all the data contained
+herein is in the public domain and may be used without restrictions.
 
 
